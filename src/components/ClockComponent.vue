@@ -20,16 +20,20 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import moment from 'moment'
-import i18n from '../i18n'
-import { QBtn } from 'quasar';
+import { QBtn } from 'quasar'
 
 @Component({
   components: { QBtn }
 })
 export default class ClassComponent extends Vue {
+  private _currentTime='';
+  public get currentTime (): string {
+    return this._currentTime
+  }
 
-  readonly message: string = 'Current Time:'
-  private currentTime = ''
+  public set currentTime (value) {
+    this._currentTime = value
+  }
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')

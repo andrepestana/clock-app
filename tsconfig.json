@@ -17,6 +17,8 @@
   "include": [
     "./src/**/*.tsx",
     "./src/**/*.ts",
-    "./test/**/*.ts"
+    "./src/**/*.vue",
+    "./test/**/*.ts",
+    "./test/**/*.vue "
   ]
 }
