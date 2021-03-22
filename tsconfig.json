@@ -2,6 +2,21 @@
   "extends": "@quasar/app/tsconfig-preset",
   "compilerOptions": {
     "baseUrl": ".",
-    "experimentalDecorators": true
-  }
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "types": [
+      "jest",
+      "quasar",
+      "node"
+    ],
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ]
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./test/**/*.ts"
+  ]
 }

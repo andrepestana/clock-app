@@ -12,6 +12,7 @@
       <section id="time" class="section">
           <h3 class="title is-3 shadow">{{ $t('currentTime') }}</h3>
           <p class="time shadow" v-text="currentTime"></p>
+          <p>{{ message }}</p>
       </section>
     </div>
 </template>
@@ -20,11 +21,15 @@
 import { Vue, Component } from 'vue-property-decorator'
 import moment from 'moment'
 import i18n from '../i18n'
+import { QBtn } from 'quasar';
 
-@Component
+@Component({
+  components: { QBtn }
+})
 export default class ClassComponent extends Vue {
-  message = 'Current Time:'
-  currentTime = ''
+
+  readonly message: string = 'Current Time:'
+  private currentTime = ''
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')
