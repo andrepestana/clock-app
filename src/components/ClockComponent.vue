@@ -12,7 +12,7 @@
       <section id="time" class="section">
           <h3 class="title is-3 shadow">{{ $t('currentTime') }}</h3>
           <p class="time shadow" v-text="currentTime"></p>
-          <p>{{ message }}</p>
+          <p v-if="getProp">Test</p>
       </section>
     </div>
 </template>
@@ -21,12 +21,17 @@
 import { Vue, Component } from 'vue-property-decorator'
 import moment from 'moment'
 import { QBtn } from 'quasar'
+import { Getter } from 'vuex-class'
 
 @Component({
   components: { QBtn }
 })
 export default class ClassComponent extends Vue {
   private _currentTime='';
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  @Getter('getProp', { namespace: 'example' }) getProp!: false
+
   public get currentTime (): string {
     return this._currentTime
   }

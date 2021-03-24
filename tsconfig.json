@@ -9,6 +9,12 @@
       "quasar",
       "node"
     ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    "skipLibCheck": true,
     "typeRoots": [
       "./types",
       "./node_modules/@types"

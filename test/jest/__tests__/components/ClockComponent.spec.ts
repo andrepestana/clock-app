@@ -1,6 +1,13 @@
 import { mountFactory } from '@quasar/quasar-app-extension-testing-unit-jest'
 import ClockComponent from '../../../../src/components/ClockComponent.vue'
 import { QBtn } from 'quasar'
+import Vuex from 'vuex'
+import { createLocalVue } from '@vue/test-utils'
+import store from '../../../../src/store/'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
+const _store = store()
 
 describe('ClassComponent.vue', () => {
   test('mounts without problem', () => {
@@ -11,7 +18,8 @@ describe('ClassComponent.vue', () => {
         components: { QBtn }
       },
       mount: {
-        mocks: { $t }
+        mocks: { $t },
+        store: _store
       }
     })()
     expect(wrapper).toBeTruthy()
