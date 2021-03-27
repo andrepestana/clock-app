@@ -1,10 +1,12 @@
 export interface ExampleStateInterface {
-  prop: boolean;
+  prop: boolean,
+  lang: string
 }
 
 function state (): ExampleStateInterface {
   return {
-    prop: true
+    prop: true,
+    lang: 'pt-br'
   }
 }
 

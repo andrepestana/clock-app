@@ -10,6 +10,9 @@ localVue.use(Vuex)
 const _store = store()
 
 describe('ClassComponent.vue', () => {
+  // beforeEach(() => {
+  //   jest.setTimeout(5000)
+  // })
   test('mounts without problem', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const $t = () => {}
@@ -23,10 +26,7 @@ describe('ClassComponent.vue', () => {
       }
     })()
     expect(wrapper).toBeTruthy()
-    expect(wrapper.vm.$data._currentTime).toBeDefined()
-    expect(wrapper.vm.$data._currentTime).toBe('')
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.$data._currentTime).not.toBe('')
-    })
+    expect(wrapper.vm.$data.currentTime).toBeDefined()
+    expect(wrapper.vm.$data.currentTime).not.toBe('')
   })
 })

@@ -2,6 +2,9 @@ import { boot } from 'quasar/wrappers'
 import messages from 'src/i18n'
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import store from '../store'
+
+const _store = store()
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -10,10 +13,10 @@ declare module 'vue/types/vue' {
 }
 
 Vue.use(VueI18n)
-
 export const i18n = new VueI18n({
-  locale: 'pt-br',
+  locale: _store.state.example.lang,
   fallbackLocale: 'en-us',
+  silentFallbackWarn: true,
   messages
 })
 

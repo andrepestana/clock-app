@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import VuexPersist from 'vuex-persist'
 import example from './module-example'
 import { ExampleStateInterface } from './module-example/state'
 
@@ -17,6 +17,11 @@ export interface StateInterface {
   example: ExampleStateInterface;
 }
 
+const vuexPersist = new VuexPersist({
+  key: 'clockApp',
+  storage: window.localStorage
+})
+
 export default function () {
   Vue.use(Vuex)
 
@@ -24,7 +29,7 @@ export default function () {
     modules: {
       example
     },
-
+    plugins: [vuexPersist.plugin],
     // enable strict mode (adds overhead!)
     // for dev mode only
     strict: !!process.env.DEBUGGING

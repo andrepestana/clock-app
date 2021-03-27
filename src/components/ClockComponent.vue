@@ -27,18 +27,9 @@ import { Getter } from 'vuex-class'
   components: { QBtn }
 })
 export default class ClassComponent extends Vue {
-  private _currentTime='';
+  currentTime = '';
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Getter('getProp', { namespace: 'example' }) getProp!: false
-
-  public get currentTime (): string {
-    return this._currentTime
-  }
-
-  public set currentTime (value) {
-    this._currentTime = value
-  }
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')
