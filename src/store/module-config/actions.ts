@@ -1,8 +1,8 @@
 import { ActionTree } from 'vuex'
 import { StateInterface } from '../index'
-import { ExampleStateInterface } from './state'
+import { ConfigStateInterface } from './state'
 
-const actions: ActionTree<ExampleStateInterface, StateInterface> = {
+const actions: ActionTree<ConfigStateInterface, StateInterface> = {
   setLang ({ commit }, lang: string) {
     commit('mutateLang', lang)
   }

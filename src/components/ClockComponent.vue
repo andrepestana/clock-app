@@ -29,7 +29,7 @@ import { Getter } from 'vuex-class'
 export default class ClassComponent extends Vue {
   currentTime = '';
 
-  @Getter('getProp', { namespace: 'example' }) getProp!: false
+  @Getter('getProp', { namespace: 'config' }) getProp!: false
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')

@@ -1,8 +1,8 @@
 import { GetterTree } from 'vuex'
 import { StateInterface } from '../index'
-import { ExampleStateInterface } from './state'
+import { ConfigStateInterface } from './state'
 
-const getters: GetterTree<ExampleStateInterface, StateInterface> = {
+const getters: GetterTree<ConfigStateInterface, StateInterface> = {
   getProp (state) {
     return state.prop
   },

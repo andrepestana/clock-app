@@ -1,9 +1,9 @@
-export interface ExampleStateInterface {
+export interface ConfigStateInterface {
   prop: boolean,
   lang: string
 }
 
-function state (): ExampleStateInterface {
+function state (): ConfigStateInterface {
   return {
     prop: true,
     lang: 'pt-br'
