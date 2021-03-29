@@ -1,7 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <clock-component @emitToggleDrawer="$emit('emitToggleDrawer')">
-    </clock-component>
+    <clock-component @emitToggleDrawer="$emit('emitToggleDrawer')" />
   </q-page>
 </template>
 

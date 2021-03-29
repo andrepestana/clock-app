@@ -1,15 +1,17 @@
 <template>
-    <div>
-        <div class="locale-changer">
-        <q-select outlined
-            v-model="$i18n.locale"
-            :options="availableLocales"
-            label="Language"
-            emit-value
-            map-options
-            @input="setLang($i18n.locale)"/>
-        </div>
+  <div>
+    <div class="locale-changer">
+      <q-select
+        v-model="$i18n.locale"
+        outlined
+        :options="availableLocales"
+        :label="$t('configuration.language')"
+        emit-value
+        map-options
+        @input="setLang($i18n.locale)"
+      />
     </div>
+  </div>
 </template>
 
 <script lang="ts">

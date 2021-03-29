@@ -1,12 +1,16 @@
 export interface ConfigStateInterface {
   prop: boolean,
-  lang: string
+  lang: string,
+  backgroundColor: string,
+  fontColor: string
 }
 
 function state (): ConfigStateInterface {
   return {
     prop: true,
-    lang: 'pt-br'
+    lang: 'pt-br',
+    backgroundColor: '#ccc',
+    fontColor: '#000'
   }
 }
 

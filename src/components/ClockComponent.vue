@@ -1,20 +1,29 @@
 <template>
-    <div>
-      <q-btn
-        flat
-        dense
-        round
-        icon="menu"
-        aria-label="Menu"
-        @click="$emit('emitToggleDrawer')"
-        class="fixed-top-left"
+  <div>
+    <q-btn
+      flat
+      dense
+      round
+      icon="menu"
+      aria-label="Menu"
+      class="fixed-top-left"
+      @click="$emit('emitToggleDrawer')"
+    />
+    <section
+      id="time"
+      class="section"
+      :style="{ backgroundColor: getBackgroundColor, background: getBackgroundColor}"
+    >
+      <h3 class="title is-3 shadow">
+        {{ $t('currentTime') }}
+      </h3>
+      <p
+        class="time shadow"
+        v-text="currentTime"
+        :style="{ color: getFontColor}"
       />
-      <section id="time" class="section">
-          <h3 class="title is-3 shadow">{{ $t('currentTime') }}</h3>
-          <p class="time shadow" v-text="currentTime"></p>
-          <p v-if="getProp">Test</p>
-      </section>
-    </div>
+    </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,7 +38,8 @@ import { Getter } from 'vuex-class'
 export default class ClassComponent extends Vue {
   currentTime = '';
 
-  @Getter('getProp', { namespace: 'config' }) getProp!: false
+  @Getter('getBackgroundColor', { namespace: 'config' }) getBackgroundColor!: ''
+  @Getter('getFontColor', { namespace: 'config' }) getFontColor!: ''
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')

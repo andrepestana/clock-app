@@ -2,6 +2,8 @@ export default {
   currentTime: 'Horário Corrente:',
   configuration: {
     title: 'Configuração',
-    language: 'Idioma'
+    language: 'Idioma',
+    backgroundColor: 'Cor de Fundo',
+    fontColor: 'Cor da Font'
   }
 }

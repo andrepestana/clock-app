@@ -8,6 +8,12 @@ const getters: GetterTree<ConfigStateInterface, StateInterface> = {
   },
   getLang (state) {
     return state.lang
+  },
+  getBackgroundColor (state) {
+    return state.backgroundColor
+  },
+  getFontColor (state) {
+    return state.fontColor
   }
 }
 
