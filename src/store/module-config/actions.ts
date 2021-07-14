@@ -9,6 +9,11 @@ const actions: ActionTree<ConfigStateInterface, StateInterface> = {
   setBackgroundColor ({ commit }, backgroundColor: string) {
     commit('mutateBackgroundColor', backgroundColor)
   },
+
+  setBackgroundImage ({ commit }, backgroundImage: string | null) {
+    commit('mutateBackgroundImage', backgroundImage)
+  },
+
   setFontColor ({ commit }, fontColor: string) {
     commit('mutateFontColor', fontColor)
   }

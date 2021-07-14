@@ -8,6 +8,10 @@ const mutation: MutationTree<ConfigStateInterface> = {
   mutateBackgroundColor (state: ConfigStateInterface, backgroundColor: string) {
     state.backgroundColor = backgroundColor
   },
+
+  mutateBackgroundImage (state: ConfigStateInterface, backgroundImage: string | null) {
+    state.backgroundImage = backgroundImage
+  },
   mutateFontColor (state: ConfigStateInterface, fontColor: string) {
     state.fontColor = fontColor
   }

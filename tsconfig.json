@@ -25,6 +25,10 @@
     "./src/**/*.ts",
     "./src/**/*.vue",
     "./test/**/*.ts",
-    "./test/**/*.vue "
+    "./test/**/*.vue ",
+    "src/boot/register.js"
+  ],
+  "exclude": [
+    "./test/jest/coverage/**"
   ]
 }
