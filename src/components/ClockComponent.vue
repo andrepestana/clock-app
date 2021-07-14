@@ -12,9 +12,14 @@
     <section
       id="time"
       class="section"
-      :style="{ backgroundColor: getBackgroundColor, background: getBackgroundColor}"
-    >
-      <h3 class="title is-3 shadow">
+      :style="{ backgroundColor: getBackgroundColor,
+                background: getBackgroundColor,
+                backgroundImage: 'url('+ getBackgroundImage +')',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+              }">
+       <h3 class="title is-3 shadow">
         {{ $t('currentTime') }}
       </h3>
       <p
@@ -33,6 +38,7 @@ import { QBtn } from 'quasar'
 import { Getter } from 'vuex-class'
 
 @Component({
+  name: 'ClockComponent',
   components: { QBtn }
 })
 export default class ClassComponent extends Vue {
@@ -40,6 +46,7 @@ export default class ClassComponent extends Vue {
 
   @Getter('getBackgroundColor', { namespace: 'config' }) getBackgroundColor!: ''
   @Getter('getFontColor', { namespace: 'config' }) getFontColor!: ''
+  @Getter('getBackgroundImage', { namespace: 'config' }) getBackgroundImage!: string
 
   updateCurrentTime () {
     this.currentTime = moment().format('LTS')
@@ -67,7 +74,7 @@ body, html {
   background: -o-linear-gradient($top-color, $bottom-color);
   background: -moz-linear-gradient($top-color, $bottom-color);
   background: linear-gradient($top-color, $bottom-color);
-}
+   }
 
 section.section {
   display: flex;
@@ -86,11 +93,12 @@ h3.is-3:not(:last-child) {
   padding: 0;
 }
 
-.time {
-  font-size: 16vw;
-}
+#time {
+    font-size: 16vw;
+    }
 
 .shadow {
   text-shadow: 0 0 15px rgba(100, 100, 100, .35);
 }
+
 </style>

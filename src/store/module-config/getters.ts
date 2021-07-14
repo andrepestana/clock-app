@@ -12,6 +12,9 @@ const getters: GetterTree<ConfigStateInterface, StateInterface> = {
   getBackgroundColor (state) {
     return state.backgroundColor
   },
+  getBackgroundImage (state) {
+    return state.backgroundImage
+  },
   getFontColor (state) {
     return state.fontColor
   }

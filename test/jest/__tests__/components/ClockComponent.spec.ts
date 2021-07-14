@@ -9,7 +9,7 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 const _store = store()
 
-describe('ClassComponent.vue', () => {
+describe('ClockComponent.vue', () => {
   // beforeEach(() => {
   //   jest.setTimeout(5000)
   // })

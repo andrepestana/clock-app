@@ -1,13 +1,13 @@
 {
   "name": "quasar_typescript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Quasar Framework app",
   "productName": "Quasar App",
   "author": "Andre",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./ --fix",
-    "test:unit": "jest --updateSnapshot",
+    "test:unit": "jest --updateSnapshot --verbose",
     "test:unit:ci": "jest --ci",
     "test:unit:coverage": "jest --coverage",
     "test:unit:watch": "jest --watch",
@@ -21,6 +21,7 @@
     "axios": "^0.18.1",
     "cordova-plugin-screen-orientation": "^3.0.2",
     "core-js": "^3.6.5",
+    "flush-promises": "^1.0.2",
     "jest": "^26.6.3",
     "moment": "^2.29.1",
     "quasar": "^1.0.0",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
+    "@quasar/quasar-app-extension-qcalendar": "^3.4.0",
     "@quasar/quasar-app-extension-testing-unit-jest": "^2.2.1",
     "@types/jest": "^26.0.21",
     "@types/node": "^10.17.15",
