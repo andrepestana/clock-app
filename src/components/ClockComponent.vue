@@ -27,7 +27,7 @@
         v-text="currentTime"
         :style="{ color: getFontColor}"
       />
-      </section>
+    </section>
   </div>
 </template>
 
