@@ -1,5 +1,6 @@
 export default {
   currentTime: 'Current Time:',
+  version: 'Version',
   configuration: {
     changeBackground: 'Change Image',
     title: 'Configuration',

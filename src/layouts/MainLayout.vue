@@ -21,6 +21,7 @@
         :label="$t('configuration.fontColor')"/>
       <bg-image
         @newBgImage="setBackgroundImage($event)"></bg-image>
+      <p class="text-center">{{ $t('version') }}: {{version}}</p>
     </q-drawer>
     <q-page-container>
       <router-view @emitToggleDrawer="leftDrawerOpen = !leftDrawerOpen" />
@@ -35,11 +36,13 @@ import { Vue, Component } from 'vue-property-decorator'
 import { Action, Getter } from 'vuex-class'
 import type { ActionMethod } from 'vuex'
 import BgImage from 'components/BgImage.vue'
+import { version } from '../../package.json'
 
 @Component({
   components: { LangSelector, ColorSelector, BgImage }
 })
 export default class MainLayout extends Vue {
+  version = version
   leftDrawerOpen = false
 
   @Getter('getBackgroundColor', { namespace: 'config' }) getBackgroundColor!: string

@@ -36,7 +36,7 @@ import { Getter } from 'vuex-class'
   components: { QBtn }
 })
 export default class ClassComponent extends Vue {
-  currentTime = '';
+  currentTime = ''
 
   @Getter('getBackgroundColor', { namespace: 'config' }) getBackgroundColor!: ''
   @Getter('getFontColor', { namespace: 'config' }) getFontColor!: ''
