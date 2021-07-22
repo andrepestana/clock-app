@@ -7,21 +7,26 @@
       behavior="mobile"
       content-class="bg-grey-1"
     >
-      <div class="text-h6">
-        {{ $t('configuration.title') }}
+      <div class="q-ma-sm">
+        <div class="text-h6">
+          {{ $t('configuration.title') }}
+        </div>
+        <lang-selector class="q-mt-xs"/>
+        <color-selector
+          :color="getBackgroundColor"
+          @emitColorHasChanged="setBackgroundColorAndRemoveBackgroundImage($event)"
+          :label="$t('configuration.backgroundColor')"
+          class="q-mt-xs" />
+        <color-selector
+          :color="getFontColor"
+          @emitColorHasChanged="setFontColor($event)"
+          :label="$t('configuration.fontColor')"
+          class="q-mt-xs" />
+        <bg-image
+          @newBgImage="setBackgroundImage($event)"
+          class="q-mt-xs"></bg-image>
+        <p class="text-center q-mt-lg">{{ $t('version') }}: {{version}}</p>
       </div>
-      <lang-selector />
-      <color-selector
-        :color="getBackgroundColor"
-        @emitColorHasChanged="setBackgroundColorAndRemoveBackgroundImage($event)"
-        :label="$t('configuration.backgroundColor')" />
-      <color-selector
-        :color="getFontColor"
-        @emitColorHasChanged="setFontColor($event)"
-        :label="$t('configuration.fontColor')"/>
-      <bg-image
-        @newBgImage="setBackgroundImage($event)"></bg-image>
-      <p class="text-center">{{ $t('version') }}: {{version}}</p>
     </q-drawer>
     <q-page-container>
       <router-view @emitToggleDrawer="leftDrawerOpen = !leftDrawerOpen" />

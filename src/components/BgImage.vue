@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md q-gutter-sm">
+  <div class="q-pr-sm q-gutter-sm">
     <q-btn id="changeBgImage" push color="teal" :label="$t('configuration.changeBackground')" @click.native="refresh" />
     <q-img class="image"
         :src="getBackgroundImage"
