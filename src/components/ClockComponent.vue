@@ -12,13 +12,7 @@
     <section
       id="time"
       class="section"
-      :style="{ backgroundColor: getBackgroundColor,
-                background: getBackgroundColor,
-                backgroundImage: 'url('+ getBackgroundImage +')',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }">
+      :style="backgroundStyle">
        <h3 class="title is-3 shadow">
         {{ $t('currentTime') }}
       </h3>
@@ -56,6 +50,16 @@ export default class ClassComponent extends Vue {
     this.updateCurrentTime()
     setInterval(() => this.updateCurrentTime(), 1 * 1000)
   }
+
+  get backgroundStyle () {
+    return {
+      ...!this.getBackgroundImage && { background: this.getBackgroundColor || 'linear-gradient(LightSteelBlue, LightSalmon)' },
+      ...this.getBackgroundImage && { backgroundImage: 'url(' + this.getBackgroundImage + ')' },
+      ...this.getBackgroundImage && { backgroundPosition: 'center' },
+      ...this.getBackgroundImage && { backgroundRepeat: 'no-repeat' },
+      ...this.getBackgroundImage && { backgroundSize: 'cover' }
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -70,10 +74,10 @@ body, html {
 #time {
   width: 100vw;
   height: 100vh;
-  background: -webkit-linear-gradient($top-color, $bottom-color);
-  background: -o-linear-gradient($top-color, $bottom-color);
-  background: -moz-linear-gradient($top-color, $bottom-color);
-  background: linear-gradient($top-color, $bottom-color);
+  // background: -webkit-linear-gradient($top-color, $bottom-color);
+  // background: -o-linear-gradient($top-color, $bottom-color);
+  // background: -moz-linear-gradient($top-color, $bottom-color);
+  // background: linear-gradient($top-color, $bottom-color);
    }
 
 section.section {

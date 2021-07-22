@@ -13,7 +13,7 @@
       <lang-selector />
       <color-selector
         :color="getBackgroundColor"
-        @emitColorHasChanged="setBackgroundColor($event)"
+        @emitColorHasChanged="setBackgroundColorAndRemoveBackgroundImage($event)"
         :label="$t('configuration.backgroundColor')" />
       <color-selector
         :color="getFontColor"
@@ -49,5 +49,10 @@ export default class MainLayout extends Vue {
   @Action('setBackgroundColor', { namespace: 'config' }) setBackgroundColor!: ActionMethod
   @Action('setFontColor', { namespace: 'config' }) setFontColor!: ActionMethod
   @Action('setBackgroundImage', { namespace: 'config' }) setBackgroundImage!: ActionMethod
+
+  async setBackgroundColorAndRemoveBackgroundImage (newColor: string) {
+    await this.setBackgroundColor(newColor)
+    await this.setBackgroundImage('')
+  }
 }
 </script>
